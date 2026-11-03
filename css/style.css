@@ -1,0 +1,96 @@
+/* ==========================================
+   ESTILOS PERSONALIZADOS POKEDEX
+   ========================================== */
+
+:root {
+  --poke-red: #e3350d;
+  --poke-dark: #1f2326;
+  --poke-bg-card: #f2f2f2;
+}
+
+body {
+  font-family: 'Open Sans', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #313131;
+}
+
+/* Navbar */
+.bg-poke-red {
+  background-color: var(--poke-red) !important;
+}
+
+/* Banner superior lateral (Si se usa sidebar de filtros) */
+.btn-surprise {
+  background-color: #30a7d7;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-surprise:hover {
+  background-color: #1b82b1;
+  color: #ffffff;
+}
+
+/* Cards de Pokémon */
+.poke-card {
+  background-color: var(--poke-bg-card);
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.poke-card:hover {
+  transform: translateY(-4px);
+}
+
+.poke-img-box {
+  background-color: #f2f2f2;
+  border-radius: 8px 8px 0 0;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.poke-number {
+  color: #919191;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Badges de Tipos y Debilidades */
+.badge-type {
+  font-size: 0.75rem;
+  padding: 0.4em 1em;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.type-planta { background-color: #9bcc50; color: #212121; }
+.type-veneno { background-color: #b97fc9; color: #ffffff; }
+.type-fuego { background-color: #fd7d24; color: #ffffff; }
+.type-agua { background-color: #4592c4; color: #ffffff; }
+.type-bicho { background-color: #729f3f; color: #ffffff; }
+.type-volador { background-color: #3dc7ef; color: #212121; }
+.type-hielo { background-color: #51c4e7; color: #212121; }
+.type-psiquico { background-color: #f366b9; color: #ffffff; }
+
+/* Vista Detalle */
+.detail-info-box {
+  background-color: #30a7d7;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+/* Vista Error 404 */
+.card-404 {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Footer */
+footer.bg-poke-dark {
+  background-color: var(--poke-dark) !important;
+}

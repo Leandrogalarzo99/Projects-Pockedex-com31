@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex | Inicio</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos de Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-poke-red sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">Pokedex</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPokedex">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPokedex">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="error404.html">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Videojuegos</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Juego de cartas</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Eventos</a></li>
+        </ul>
+        <form class="d-flex" action="error404.html">
+          <input class="form-control me-2" type="search" placeholder="Buscar un pokémon">
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER (RUTA LOCAL) -->
+  <header class="w-100 overflow-hidden mb-4" style="max-height: 250px;">
+    <img src="" class="img-fluid w-100 object-fit-cover" alt="Banner Pokemon">
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container py-3">
+    <!-- BARRA DE ACCIÓN Y ORDEN -->
+    <div class="row align-items-center mb-4 g-3">
+      <div class="col-md-6">
+        <a href="error404.html" class="btn btn-surprise rounded-pill px-4 py-2 w-100 w-md-auto">
+          <i class="bi bi-shuffle me-2"></i>¡Sorpréndeme!
+        </a>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <label class="me-2 text-muted small">Ordenar por</label>
+        <select class="form-select d-inline-block w-auto">
+          <option>Número inferior</option>
+          <option>Número superior</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- GRILLA DE POKEMÓN -->
+    <div class="row g-4">
+      <!-- Bulbasaur -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="detail.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/001.png" class="img-fluid" alt="Bulbasaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0001</span>
+              <h5 class="card-title fw-bold">Bulbasaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ivysaur -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/002.png" class="img-fluid" alt="Ivysaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0002</span>
+              <h5 class="card-title fw-bold">Ivysaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Venusaur -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/003.png" class="img-fluid" alt="Venusaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0003</span>
+              <h5 class="card-title fw-bold">Venusaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charmander -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/004.png" class="img-fluid" alt="Charmander">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0004</span>
+              <h5 class="card-title fw-bold">Charmander</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charmeleon -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/005.png" class="img-fluid" alt="Charmeleon">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0005</span>
+              <h5 class="card-title fw-bold">Charmeleon</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charizard -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/006.png" class="img-fluid" alt="Charizard">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0006</span>
+              <h5 class="card-title fw-bold">Charizard</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+                <span class="badge-type type-volador">Volador</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Squirtle -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/007.png" class="img-fluid" alt="Squirtle">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0007</span>
+              <h5 class="card-title fw-bold">Squirtle</h5>
+              <div>
+                <span class="badge-type type-agua">Agua</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Wartortle -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card poke-card h-100">
+          <a href="error404.html" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/img/008.png" class="img-fluid" alt="Wartortle">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0008</span>
+              <h5 class="card-title fw-bold">Wartortle</h5>
+              <div>
+                <span class="badge-type type-agua">Agua</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTÓN CARGAR MÁS -->
+    <div class="text-center my-5">
+      <a href="error404.html" class="btn btn-danger bg-poke-red px-4 py-2 rounded-3 fw-bold">Cargar más Pokémon</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-poke-dark text-white py-5 mt-auto">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-md-5">
+          <h6 class="fw-bold mb-3">The Pokemon Company</h6>
+          <ul class="list-unstyled small text-secondary vstack gap-2">
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Novedades</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Guía para padres y tutores</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Servicio de atención al cliente</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Sobre nuestra compañía</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Seleccionar país o región</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Sitio de prensa</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="d-flex justify-content-center gap-3 fs-4 mb-3">
+            <a href="error404.html" class="text-white"><i class="bi bi-facebook"></i></a>
+            <a href="error404.html" class="text-white"><i class="bi bi-youtube"></i></a>
+            <a href="error404.html" class="text-white"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h6 class="fw-bold mb-3">Nosotros</h6>
+          <ul class="list-unstyled small text-secondary vstack gap-2">
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Términos de uso</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Aviso sobre la privacidad</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Información legal</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
