@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex | Detalle</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-white">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-poke-red sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">Pokedex</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPokedex">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPokedex">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="error404.html">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Videojuegos</a></li>
+        </ul>
+        <form class="d-flex align-items-center" onsubmit="return false;">
+          <input class="form-control me-2 form-control-sm" type="search" placeholder="Buscar un pokémon">
+          <button type="button" class="btn btn-warning btn-sm fw-bold text-dark text-nowrap" onclick="sorpresaPokemonDetail()">
+            <i class="bi bi-shuffle me-1"></i> Sorpréndeme
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO DETALLE -->
+  <main class="container my-5 flex-grow-1" style="max-width: 950px;">
+    
+    <!-- BOTONES ANTERIOR / SIGUIENTE -->
+    <div class="d-flex justify-content-between mb-3">
+      <a id="prev-btn" href="#" class="btn btn-outline-secondary btn-sm fw-bold px-3">
+        <i class="bi bi-chevron-left me-1"></i> <span id="prev-name">Anterior</span>
+      </a>
+      <a id="next-btn" href="#" class="btn btn-outline-secondary btn-sm fw-bold px-3">
+        <span id="next-name">Siguiente</span> <i class="bi bi-chevron-right ms-1"></i>
+      </a>
+    </div>
+
+    <!-- TÍTULO DINÁMICO -->
+    <div class="text-center mb-5">
+      <h1 id="poke-title" class="fw-bold display-5 text-dark">Cargando...</h1>
+    </div>
+
+    <!-- SECCIÓN CENTRAL: IMAGEN Y PANEL CELESTE -->
+    <div class="row g-4 align-items-center mb-5">
+      
+      <!-- Imagen -->
+      <div class="col-md-6">
+        <div class="poke-detail-img-box p-4 rounded-4 text-center bg-light shadow-sm">
+          <img id="poke-img" src="" alt="Pokémon" class="img-fluid" style="max-height: 320px; object-fit: contain;">
+        </div>
+      </div>
+
+      <!-- Panel Celeste de Información -->
+      <div class="col-md-6">
+        <div class="detail-info-box shadow-sm p-4 rounded-4 text-white">
+          <p id="poke-desc" class="lead fs-6 mb-4">Cargando información...</p>
+          <div class="row g-3">
+            <div class="col-6">
+              <span class="d-block small text-white-50">Altura</span>
+              <span id="poke-height" class="fw-bold fs-6">-</span>
+            </div>
+            <div class="col-6">
+              <span class="d-block small text-white-50">Categoría</span>
+              <span id="poke-category" class="fw-bold fs-6">-</span>
+            </div>
+            <div class="col-6">
+              <span class="d-block small text-white-50">Peso</span>
+              <span id="poke-weight" class="fw-bold fs-6">-</span>
+            </div>
+            <div class="col-6">
+              <span class="d-block small text-white-50">Habilidad</span>
+              <span id="poke-ability" class="fw-bold fs-6">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECCIÓN INFERIOR: TIPOS Y DEBILIDADES -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-6">
+        <h5 class="fw-bold text-dark mb-3">Tipo</h5>
+        <div id="poke-types"></div>
+      </div>
+      <div class="col-md-6">
+        <h5 class="fw-bold text-dark mb-3">Debilidad</h5>
+        <div id="poke-weaknesses"></div>
+      </div>
+    </div>
+
+    <!-- BOTÓN VOLVER -->
+    <div class="text-center mt-5 mb-4">
+      <a href="index.html" class="btn btn-danger bg-poke-red px-4 py-2 rounded-3 text-decoration-none shadow-sm">
+        <i class="bi bi-house-door me-2"></i>Volver al inicio
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-poke-dark text-white py-4 mt-auto">
+    <div class="container text-center text-md-start">
+      <div class="row g-4 justify-content-between">
+        <div class="col-md-5">
+          <h6 class="fw-bold mb-3">The Pokemon Company</h6>
+          <ul class="list-unstyled small text-secondary vstack gap-2">
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Novedades</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DINÁMICO DE DETALLE + NAVEGACIÓN -->
+  <script>
+    const pokemons = {
+      "1": { name: "Bulbasaur", num: "N.º 0001", img: "./assets/001.png", desc: "Tras nacer, crece alimentándose durante un tiempo de los nutrientes que contiene el bulbo de su lomo.", height: "0,7 m", weight: "6,9 kg", category: "Semilla", ability: "Espesura", types: [{class: "type-planta", text: "Planta"}, {class: "type-veneno", text: "Veneno"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}, {class: "type-hielo", text: "Hielo"}, {class: "type-psiquico", text: "Psíquico"}] },
+      "2": { name: "Ivysaur", num: "N.º 0002", img: "./assets/002.png", desc: "Cuando le brota un bulbo grande en el lomo, pierde la capacidad de erguirse sobre las patas traseras.", height: "1,0 m", weight: "13,0 kg", category: "Sostén", ability: "Espesura", types: [{class: "type-planta", text: "Planta"}, {class: "type-veneno", text: "Veneno"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}, {class: "type-hielo", text: "Hielo"}, {class: "type-psiquico", text: "Psíquico"}] },
+      "3": { name: "Venusaur", num: "N.º 0003", img: "./assets/003.png", desc: "Su planta florece cuando absorbe energía solar. El aroma de su flor calma a quienes lo rodean.", height: "2,0 m", weight: "100,0 kg", category: "Semilla", ability: "Espesura", types: [{class: "type-planta", text: "Planta"}, {class: "type-veneno", text: "Veneno"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}, {class: "type-hielo", text: "Hielo"}, {class: "type-psiquico", text: "Psíquico"}] },
+      "4": { name: "Charmander", num: "N.º 0004", img: "./assets/004.png", desc: "Prefiere los lugares calurosos. Cuando llueve, sale vapor de la punta de su cola.", height: "0,6 m", weight: "8,5 kg", category: "Lagartija", ability: "Mar Llamas", types: [{class: "type-fuego", text: "Fuego"}], weaknesses: [{class: "type-agua", text: "Agua"}, {class: "type-hielo", text: "Hielo"}] },
+      "5": { name: "Charmeleon", num: "N.º 0005", img: "./assets/005.png", desc: "Es de naturaleza agresiva. En combate, echa fuego por la cola y arremete con sus afiladas garras.", height: "1,1 m", weight: "19,0 kg", category: "Llama", ability: "Mar Llamas", types: [{class: "type-fuego", text: "Fuego"}], weaknesses: [{class: "type-agua", text: "Agua"}] },
+      "6": { name: "Charizard", num: "N.º 0006", img: "./assets/006.png", desc: "Escupe fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.", height: "1,7 m", weight: "90,5 kg", category: "Llama", ability: "Mar Llamas", types: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}], weaknesses: [{class: "type-agua", text: "Agua"}, {class: "type-hielo", text: "Hielo"}] },
+      "7": { name: "Squirtle", num: "N.º 0007", img: "./assets/007.png", desc: "Tras nacer, su lomo se hincha y se endurece como una coraza. Echa potente espuma por la boca.", height: "0,5 m", weight: "9,0 kg", category: "Tortuguita", ability: "Torrente", types: [{class: "type-agua", text: "Agua"}], weaknesses: [{class: "type-planta", text: "Planta"}] },
+      "8": { name: "Wartortle", num: "N.º 0008", img: "./assets/008.png", desc: "Tiene una larga cola cubierta de un pelo rico y espeso que se vuelve más oscuro con la edad.", height: "1,0 m", weight: "22,5 kg", category: "Tortuga", ability: "Torrente", types: [{class: "type-agua", text: "Agua"}], weaknesses: [{class: "type-planta", text: "Planta"}] },
+      "9": { name: "Blastoise", num: "N.º 0009", img: "./assets/009.png", desc: "Sus pesados cañones disparan chorros de agua con la fuerza suficiente para perforar acero.", height: "1,6 m", weight: "85,5 kg", category: "Armazón", ability: "Torrente", types: [{class: "type-agua", text: "Agua"}], weaknesses: [{class: "type-planta", text: "Planta"}] },
+      "10": { name: "Caterpie", num: "N.º 0010", img: "./assets/010.png", desc: "Sus cortas patas están provistas de ventosas que le permiten trepar por muros y pendientes.", height: "0,3 m", weight: "2,9 kg", category: "Gusano", ability: "Polvo Escudo", types: [{class: "type-insecto", text: "Bicho"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}] },
+      "11": { name: "Metapod", num: "N.º 0011", img: "./assets/011.png", desc: "Su capullo es duro como el acero. Apenas se mueve porque espera a que su interior evolucione.", height: "0,7 m", weight: "9,9 kg", category: "Capullo", ability: "Secreción", types: [{class: "type-insecto", text: "Bicho"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-volador", text: "Volador"}] },
+      "12": { name: "Butterfree", num: "N.º 0012", img: "./assets/012.png", desc: "Adora el néctar de las flores y puede localizar polen incluso a kilómetros de distancia.", height: "1,1 m", weight: "32,0 kg", category: "Mariposa", ability: "Ojo Compuesto", types: [{class: "type-insecto", text: "Bicho"}, {class: "type-volador", text: "Volador"}], weaknesses: [{class: "type-fuego", text: "Fuego"}, {class: "type-hielo", text: "Hielo"}] }
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const pokeId = parseInt(urlParams.get('id')) || 1;
+    const poke = pokemons[pokeId] || pokemons["1"];
+
+    // Cargar datos principales
+    document.getElementById('poke-title').innerHTML = `${poke.name} <span class="text-muted fw-normal fs-3">${poke.num}</span>`;
+    document.getElementById('poke-img').src = poke.img;
+    document.getElementById('poke-img').alt = poke.name;
+    document.getElementById('poke-desc').innerText = poke.desc;
+    document.getElementById('poke-height').innerText = poke.height;
+    document.getElementById('poke-category').innerText = poke.category;
+    document.getElementById('poke-weight').innerText = poke.weight;
+    document.getElementById('poke-ability').innerText = poke.ability;
+
+    // Tipos y debilidades
+    document.getElementById('poke-types').innerHTML = poke.types.map(t => `<span class="badge-type ${t.class} px-3 py-2">${t.text}</span>`).join(' ');
+    document.getElementById('poke-weaknesses').innerHTML = poke.weaknesses.map(w => `<span class="badge-type ${w.class} px-3 py-2">${w.text}</span>`).join(' ');
+
+    // Configurar botones de Anterior y Siguiente (con bucle circular del 1 al 12)
+    const prevId = pokeId > 1 ? pokeId - 1 : 12;
+    const nextId = pokeId < 12 ? pokeId + 1 : 1;
+
+    document.getElementById('prev-btn').href = `detail.html?id=${prevId}`;
+    document.getElementById('prev-name').innerText = pokemons[prevId].name;
+
+    document.getElementById('next-btn').href = `detail.html?id=${nextId}`;
+    document.getElementById('next-name').innerText = pokemons[nextId].name;
+
+    function sorpresaPokemonDetail() {
+      const randomId = Math.floor(Math.random() * 12) + 1;
+      window.location.href = `detail.html?id=${randomId}`;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

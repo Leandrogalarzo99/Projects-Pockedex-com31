@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex | Inicio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-poke-red sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">Pokedex</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPokedex">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarPokedex">
+        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="error404.html">Categorías</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Videojuegos</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Juego de cartas</a></li>
+          <li class="nav-item"><a class="nav-link" href="error404.html">Eventos</a></li>
+        </ul>
+        <form class="d-flex align-items-center" onsubmit="return false;">
+          <input id="search-input" class="form-control me-2 form-control-sm" type="search" placeholder="Buscar un pokémon...">
+          <button type="button" class="btn btn-warning btn-sm fw-bold text-dark text-nowrap" onclick="sorpresaPokemon()">
+            <i class="bi bi-shuffle me-1"></i> Sorpréndeme
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BANNER CON IMAGEN -->
+  <div class="container my-3">
+    <div class="poke-banner-img text-center">
+      <img src="./assets/banner/BANNER-65-POKEMON-1920X700-1170x427.jpg" alt="Banner Pokedex" class="img-fluid rounded-4 shadow-sm w-100" style="max-height: 200px; object-fit: cover;">
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container py-4 flex-grow-1">
+    
+    <!-- GRILLA DE POKEMÓN -->
+    <div id="poke-grid" class="row g-4">
+      
+      <!-- Bulbasaur (id=1) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="bulbasaur">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=1" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/001.png" class="img-fluid" alt="Bulbasaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0001</span>
+              <h5 class="card-title fw-bold">Bulbasaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ivysaur (id=2) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="ivysaur">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=2" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/002.png" class="img-fluid" alt="Ivysaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0002</span>
+              <h5 class="card-title fw-bold">Ivysaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Venusaur (id=3) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="venusaur">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=3" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/003.png" class="img-fluid" alt="Venusaur">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0003</span>
+              <h5 class="card-title fw-bold">Venusaur</h5>
+              <div>
+                <span class="badge-type type-planta">Planta</span>
+                <span class="badge-type type-veneno">Veneno</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charmander (id=4) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="charmander">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=4" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/004.png" class="img-fluid" alt="Charmander">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0004</span>
+              <h5 class="card-title fw-bold">Charmander</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charmeleon (id=5) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="charmeleon">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=5" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/005.png" class="img-fluid" alt="Charmeleon">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0005</span>
+              <h5 class="card-title fw-bold">Charmeleon</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Charizard (id=6) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="charizard">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=6" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/006.png" class="img-fluid" alt="Charizard">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0006</span>
+              <h5 class="card-title fw-bold">Charizard</h5>
+              <div>
+                <span class="badge-type type-fuego">Fuego</span>
+                <span class="badge-type type-volador">Volador</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Squirtle (id=7) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="squirtle">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=7" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/007.png" class="img-fluid" alt="Squirtle">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0007</span>
+              <h5 class="card-title fw-bold">Squirtle</h5>
+              <div>
+                <span class="badge-type type-agua">Agua</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Wartortle (id=8) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="wartortle">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=8" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/008.png" class="img-fluid" alt="Wartortle">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0008</span>
+              <h5 class="card-title fw-bold">Wartortle</h5>
+              <div>
+                <span class="badge-type type-agua">Agua</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Blastoise (id=9) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="blastoise">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=9" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/009.png" class="img-fluid" alt="Blastoise">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0009</span>
+              <h5 class="card-title fw-bold">Blastoise</h5>
+              <div>
+                <span class="badge-type type-agua">Agua</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Caterpie (id=10) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="caterpie">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=10" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/010.png" class="img-fluid" alt="Caterpie">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0010</span>
+              <h5 class="card-title fw-bold">Caterpie</h5>
+              <div>
+                <span class="badge-type type-insecto">Bicho</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Metapod (id=11) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="metapod">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=11" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/011.png" class="img-fluid" alt="Metapod">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0011</span>
+              <h5 class="card-title fw-bold">Metapod</h5>
+              <div>
+                <span class="badge-type type-insecto">Bicho</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Butterfree (id=12) -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 poke-item" data-name="butterfree">
+        <div class="card poke-card h-100">
+          <a href="detail.html?id=12" class="text-decoration-none text-dark">
+            <div class="poke-img-box">
+              <img src="./assets/012.png" class="img-fluid" alt="Butterfree">
+            </div>
+            <div class="card-body">
+              <span class="poke-number">N.º 0012</span>
+              <h5 class="card-title fw-bold">Butterfree</h5>
+              <div>
+                <span class="badge-type type-insecto">Bicho</span>
+                <span class="badge-type type-volador">Volador</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-poke-dark text-white py-4 mt-auto">
+    <div class="container text-center text-md-start">
+      <div class="row g-4 justify-content-between">
+        <div class="col-md-5">
+          <h6 class="fw-bold mb-3">The Pokemon Company</h6>
+          <ul class="list-unstyled small text-secondary vstack gap-2">
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Novedades</a></li>
+            <li><a href="error404.html" class="text-secondary text-decoration-none">Servicio de atención al cliente</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Botón Sorpréndeme
+    function sorpresaPokemon() {
+      const randomId = Math.floor(Math.random() * 12) + 1;
+      window.location.href = `detail.html?id=${randomId}`;
+    }
+
+    // Buscador en tiempo real
+    document.getElementById('search-input').addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase().trim();
+      const items = document.querySelectorAll('.poke-item');
+
+      items.forEach(item => {
+        const name = item.getAttribute('data-name');
+        if (name.includes(term)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
